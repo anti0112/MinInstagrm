@@ -28,22 +28,22 @@
     <section class="items">
       <div class="items__item item">
         <div class="item__top">
-          <a href="/user-feed.html" class="item__head">
+          <a href="/user/{{user.poster_name}}" class="item__head">
             <div class="item__ava-wrap">
               <img src="{{ user.poster_avatar}}" alt="" class="item__ava" width="47">
             </div>
             <span class="item__username">{{ user.poster_name}}</span>
           </a>
         </div>
-        <a href="/post.html" class="item__post-link">
+        <a href="/post/{{ user.pk }}" class="item__post-link">
           <img src="{{ user.pic }}" alt="" width="348" class="item__post-img">
         </a>
-        <p class="item__descr"><a href="/tag/{{ tag }}" class="item__tag">{{ user.tag }}</a> {{ user.content[0:45] }}</p>
+        <p class="item__descr"><a href="/tags/{{ user.tag[1:] }}" class="item__tag">{{ user.tag }}</a> {{ user.content[0:45] }}</p>
 
         <div class="item__post-info">
           <div class="item__counter">
             <img src="/static/img/eye.png" alt="" class="item__counter-icon" width="26">
-            <span class="item__counter-text">212</span>
+            <span class="item__counter-text">{{ user.views_count }}</span>
           </div>
         </div>
         <div class="item__post-bottom">
